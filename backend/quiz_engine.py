@@ -35,3 +35,4 @@ def evaluate_quiz(responses):
         if score < 0.7:  # threshold → less than 70% is weak
             weak_subjects.append(subject)
     return weak_subjects
+
