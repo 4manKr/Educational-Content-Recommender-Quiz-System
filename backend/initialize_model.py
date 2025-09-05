@@ -45,43 +45,43 @@ def check_model_exists():
 
 def initialize_model():
     """Initialize the ML model for the application"""
-    print("🚀 Initializing Edu- ML Model...")
+    print("Initializing Edu- ML Model...")
     print("=" * 50)
     
     # Check if model already exists
     model_exists, message = check_model_exists()
     
     if model_exists:
-        print(f"✅ {message}")
-        print("📊 Model is ready for deployment!")
+        print(f"[OK] {message}")
+        print("Model is ready for deployment!")
         return True
     
-    print(f"⚠️  {message}")
-    print("🔄 Training new model...")
+    print(f"[WARNING] {message}")
+    print("Training new model...")
     
     # Train the model
     try:
         result = train_model()
         
         if result["status"] == "success":
-            print("✅ Model training completed successfully!")
-            print(f"📈 Dataset size: {result['dataset_size']} resources")
-            print(f"🔢 Features: {result['features']}")
-            print(f"📚 Domains: {result['domains']}")
-            print(f"📖 Subjects: {result['subjects']}")
-            print(f"💾 Model saved at: {result['model_path']}")
+            print("[SUCCESS] Model training completed successfully!")
+            print(f"Dataset size: {result['dataset_size']} resources")
+            print(f"Features: {result['features']}")
+            print(f"Domains: {result['domains']}")
+            print(f"Subjects: {result['subjects']}")
+            print(f"Model saved at: {result['model_path']}")
             return True
         else:
-            print(f"❌ Model training failed: {result['message']}")
+            print(f"[ERROR] Model training failed: {result['message']}")
             return False
             
     except Exception as e:
-        print(f"❌ Error during model training: {e}")
+        print(f"[ERROR] Error during model training: {e}")
         return False
 
 def verify_deployment_readiness():
     """Verify that the application is ready for deployment"""
-    print("\n🔍 Verifying deployment readiness...")
+    print("\nVerifying deployment readiness...")
     print("=" * 50)
     
     checks = []
@@ -103,16 +103,16 @@ def verify_deployment_readiness():
     # Display results
     all_passed = True
     for check_name, passed in checks:
-        status = "✅" if passed else "❌"
+        status = "[OK]" if passed else "[FAIL]"
         print(f"{status} {check_name}")
         if not passed:
             all_passed = False
     
     if all_passed:
-        print("\n🎉 Application is ready for deployment!")
+        print("\n[SUCCESS] Application is ready for deployment!")
         return True
     else:
-        print("\n⚠️  Some checks failed. Please fix the issues above.")
+        print("\n[WARNING] Some checks failed. Please fix the issues above.")
         return False
 
 if __name__ == "__main__":
