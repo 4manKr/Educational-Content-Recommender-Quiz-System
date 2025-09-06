@@ -1,0 +1,11 @@
+domain,category_contains,topic
+Math,Algebra,Algebra
+Math,Geometry,Geometry
+Math,Trigonometry,Trigonometry
+Science,Physics,Physics
+Science,Chemistry,Chemistry
+Science,Biology,Biology
+Programming,Python,Python Basics
+Programming,Computer,CS Fundamentals
+History,World,World History
+History,Ancient,Ancient History

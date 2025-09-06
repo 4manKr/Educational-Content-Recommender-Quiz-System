@@ -1,0 +1,125 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Science &amp; Nature",
+      "question": "Which element has the highest melting point?",
+      "correct_answer": "Carbon",
+      "incorrect_answers": [
+        "Tungsten",
+        "Platinum",
+        "Osmium"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science &amp; Nature",
+      "question": "Where did the dog breed &quot;Chihuahua&quot; originate?",
+      "correct_answer": "Mexico",
+      "incorrect_answers": [
+        "France",
+        "Spain",
+        "Russia"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Science &amp; Nature",
+      "question": "What is the scientific name of the knee cap?",
+      "correct_answer": "Patella",
+      "incorrect_answers": [
+        "Femur",
+        "Foramen Magnum",
+        "Scapula"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Science &amp; Nature",
+      "question": "Which of the following bones is not in the leg?",
+      "correct_answer": "Radius",
+      "incorrect_answers": [
+        "Patella",
+        "Tibia",
+        "Fibula "
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science &amp; Nature",
+      "question": "What is radiation measured in?",
+      "correct_answer": "Gray ",
+      "incorrect_answers": [
+        "Watt",
+        "Decibel",
+        "Kelvin"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science &amp; Nature",
+      "question": "The medical condition osteoporosis affects which part of the body?",
+      "correct_answer": "Bones",
+      "incorrect_answers": [
+        "Skin",
+        "Brain",
+        "Heart"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Science &amp; Nature",
+      "question": "Which of the following is considered classical conditioning?",
+      "correct_answer": "Pavlov&#039;s dog experiments",
+      "incorrect_answers": [
+        "Skinner box experiment",
+        "Schr&ouml;dinger&#039;s cat experiment",
+        "Harlow&rsquo;s monkey experiments"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Science &amp; Nature",
+      "question": "How long is a light-year?",
+      "correct_answer": "9.461 Trillion Kilometres",
+      "incorrect_answers": [
+        "1 AU",
+        "105.40 Earth-years",
+        "501.2 Million Miles"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science &amp; Nature",
+      "question": "The human right lung has how many lobes?",
+      "correct_answer": "3",
+      "incorrect_answers": [
+        "4",
+        "2",
+        "1"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Science &amp; Nature",
+      "question": "What is the standard SI unit for temperature?",
+      "correct_answer": "Kelvin",
+      "incorrect_answers": [
+        "Fahrenheit",
+        "Celsius",
+        "Rankine"
+      ]
+    }
+  ]
+}

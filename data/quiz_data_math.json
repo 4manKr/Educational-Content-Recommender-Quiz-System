@@ -1,0 +1,125 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science: Mathematics",
+      "question": "At what temperature does temp in &deg;C equal temp in &deg;F?",
+      "correct_answer": "-40",
+      "incorrect_answers": [
+        "+40",
+        "0",
+        "+100"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science: Mathematics",
+      "question": "What is the area of a circle with a diameter of 20 inches if &pi;= 3.1415?",
+      "correct_answer": "314.15 Inches",
+      "incorrect_answers": [
+        "380.1215 Inches",
+        "3141.5 Inches",
+        "1256.6 Inches"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science: Mathematics",
+      "question": "What Greek letter is used to signify summation?",
+      "correct_answer": "Sigma",
+      "incorrect_answers": [
+        "Delta",
+        "Alpha",
+        "Omega"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science: Mathematics",
+      "question": "In the hexadecimal system, what number comes after 9?",
+      "correct_answer": "The Letter A",
+      "incorrect_answers": [
+        "10",
+        "The Number 0",
+        "16"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science: Mathematics",
+      "question": "What is the Roman numeral for 500?",
+      "correct_answer": "D",
+      "incorrect_answers": [
+        "L",
+        "C",
+        "X"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Science: Mathematics",
+      "question": "Which of the following famous mathematicians died in a duel at the age of 20?",
+      "correct_answer": "Galois",
+      "incorrect_answers": [
+        "Abel",
+        "Euler",
+        "Gauss"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Science: Mathematics",
+      "question": "What is the equation for the area of a sphere?",
+      "correct_answer": "(4/3)&pi;r^3",
+      "incorrect_answers": [
+        "4&pi;r^2",
+        "(1/3)&pi;hr^2",
+        "&pi;r^4"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science: Mathematics",
+      "question": "What is the derivative of sin(x)",
+      "correct_answer": "cos(x)",
+      "incorrect_answers": [
+        "csc(x)",
+        "-cos(x)",
+        "-sin(x)"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Science: Mathematics",
+      "question": "What is the fourth digit of &pi;?",
+      "correct_answer": "1",
+      "incorrect_answers": [
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Science: Mathematics",
+      "question": "In the complex plane, multiplying a given function by i rotates it anti-clockwise by how many degrees?",
+      "correct_answer": "90",
+      "incorrect_answers": [
+        "180",
+        "270",
+        "0"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+[
+    {
+      "question": "What is 2 + 2?",
+      "answer": "4",
+      "domain": "Math",
+      "topic": "Arithmetic",
+      "options": ["3", "4", "5", "6"]
+    },
+    {
+      "question": "Which gas do humans need to survive?",
+      "answer": "Oxygen",
+      "domain": "Science",
+      "topic": "Biology",
+      "options": ["Carbon Dioxide", "Oxygen", "Nitrogen", "Helium"]
+    },
+    {
+      "question": "Which programming language is used for AI?",
+      "answer": "Python",
+      "domain": "Programming",
+      "topic": "Machine Learning",
+      "options": ["C++", "Python", "Java", "Ruby"]
+    },
+    {
+      "question": "When did World War II begin?",
+      "answer": "1939",
+      "domain": "History",
+      "topic": "World War",
+      "options": ["1914", "1939", "1945", "1950"]
+    }
+  ]
+  
