@@ -17,7 +17,6 @@ sys.path.append(backend_path)
 
 # Import backend modules
 try:
-    from model_trainer import train_model
     from step6_evaluator import evaluate_quiz as backend_evaluate_quiz
 except ImportError as e:
     st.warning(f"⚠️ Could not import backend modules: {e}")
@@ -100,7 +99,7 @@ st.title("📚 Educational Content Recommender & Quiz System")
 st.write("Take a quiz to identify your weak subjects and get personalized resource recommendations!")
 
 # Create tabs for different functionalities
-tab1, tab2, tab3, tab4 = st.tabs(["🎯 Take Quiz", "🔍 Manual Search", "🤖 Train Model", "📊 Model Evaluation"])
+tab1, tab2, tab3 = st.tabs(["🎯 Take Quiz", "🔍 Manual Search", "📊 Model Evaluation"])
 
 with tab1:
     st.subheader("📝 Knowledge Assessment Quiz")
@@ -211,96 +210,6 @@ with tab2:
             st.info("No recommendations available. The model may not be trained yet or the topic might not be in our database.")
 
 with tab3:
-    st.subheader("🤖 Model Training")
-    st.write("Train the recommendation model using the educational resources dataset.")
-    
-    # Training configuration
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("### ⚙️ Training Parameters")
-        max_features = st.slider("Max TF-IDF Features", 1000, 10000, 5000, 500)
-        n_neighbors = st.slider("Number of Neighbors", 3, 10, 5)
-        
-        # Dataset selection
-        dataset_options = {
-            "resources_curated.csv": "Curated Resources (Recommended)",
-            "resources_cleaned.csv": "Cleaned Resources",
-            "resources.csv": "Raw Resources"
-        }
-        selected_dataset = st.selectbox("Select Dataset", list(dataset_options.keys()), 
-                                      format_func=lambda x: dataset_options[x])
-    
-    with col2:
-        st.markdown("### 📊 Current Model Status")
-        if model is not None:
-            st.success("✅ Model is loaded and ready")
-            if data is not None:
-                st.metric("Dataset Size", f"{len(data):,} resources")
-                st.metric("Unique Domains", data["domain"].nunique())
-                st.metric("Unique Subjects", data["subjects"].nunique())
-        else:
-            st.warning("⚠️ No model loaded")
-    
-    # Training button
-    if st.button("🚀 Start Training", type="primary"):
-        with st.spinner("Training model... This may take a few moments."):
-            # Set up paths
-            current_dir = Path(__file__).parent
-            data_path = current_dir.parent / "data" / selected_dataset
-            model_path = Path(backend_path) / "models" / "recommender_model.pkl"
-            
-            # Train model
-            try:
-                result = train_model(
-                    data_path=str(data_path),
-                    model_path=str(model_path),
-                    max_features=max_features,
-                    n_neighbors=n_neighbors
-                )
-                
-                if result["status"] == "success":
-                    st.success("🎉 Model training completed successfully!")
-                    
-                    # Display training metrics
-                    col1, col2, col3 = st.columns(3)
-                    with col1:
-                        st.metric("Dataset Size", f"{result['dataset_size']:,}")
-                    with col2:
-                        st.metric("Features", f"{result['features']:,}")
-                    with col3:
-                        st.metric("Domains", result['domains'])
-                    
-                    # Show additional info
-                    st.info(f"📁 Model saved to: {result['model_path']}")
-                    
-                    # Clear cache to reload model
-                    st.cache_resource.clear()
-                    st.rerun()
-                else:
-                    st.error(f"❌ Training failed: {result['message']}")
-                    
-            except Exception as e:
-                st.error(f"❌ Training error: {str(e)}")
-    
-    # Model information
-    st.markdown("### 📋 Model Information")
-    st.markdown("""
-    **Model Type:** Nearest Neighbors with TF-IDF Vectorization
-    
-    **Training Process:**
-    1. Load educational resources dataset
-    2. Combine domain, subjects, and title into text features
-    3. Apply TF-IDF vectorization with English stop words
-    4. Train Nearest Neighbors model with cosine similarity
-    5. Save model, vectorizer, and data for inference
-    
-    **Parameters:**
-    - **Max Features:** Controls vocabulary size for TF-IDF
-    - **Number of Neighbors:** How many similar resources to find
-    """)
-
-with tab4:
     st.subheader("📊 Model Evaluation")
     st.write("Evaluate the model performance and view detailed metrics.")
     

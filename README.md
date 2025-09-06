@@ -35,6 +35,7 @@ Edu-/
 
 ## 🛠️ Installation
 
+<<<<<<< HEAD
 ### Quick Start (Recommended)
 1. **Clone the repository**
    ```bash
@@ -55,6 +56,8 @@ Edu-/
    Open your browser and navigate to `http://localhost:8501`
 
 ### Manual Installation
+=======
+>>>>>>> 6386b20ad98dbc7f5d0001a14dc2464da17d9c1e
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
@@ -66,17 +69,25 @@ Edu-/
    pip install -r requirements.txt
    ```
 
+<<<<<<< HEAD
 3. **Initialize the ML model**
    ```bash
    python backend/initialize_model.py
    ```
 
 4. **Run the application**
+=======
+3. **Run the application**
+>>>>>>> 6386b20ad98dbc7f5d0001a14dc2464da17d9c1e
    ```bash
    streamlit run frontend/app.py
    ```
 
+<<<<<<< HEAD
 5. **Access the web interface**
+=======
+4. **Access the web interface**
+>>>>>>> 6386b20ad98dbc7f5d0001a14dc2464da17d9c1e
    Open your browser and navigate to `http://localhost:8501`
 
 ## 📖 Usage
@@ -195,6 +206,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Streamlit** for the web framework
 - **scikit-learn** for machine learning capabilities
 
+<<<<<<< HEAD
 ## 🔧 Troubleshooting
 
 ### Common Issues
@@ -238,6 +250,11 @@ python model_trainer.py
 ## 📞 Support
 
 For support, email [your-email@example.com] or create an issue in the repository.
+=======
+## 📞 Support
+
+For support, email [amanchaurasiya5555@gmail.com] or create an issue in the repository.
+>>>>>>> 6386b20ad98dbc7f5d0001a14dc2464da17d9c1e
 
 ## 🔮 Future Enhancements
 
