@@ -21,6 +21,13 @@ try:
 except ImportError as e:
     st.warning(f"⚠️ Could not import backend modules: {e}")
 
+# Optional: training utilities for auto-fallback
+try:
+    sys.path.append(backend_path)
+    from model_trainer import train_model as backend_train_model
+except Exception:
+    backend_train_model = None
+
 # ---------------------------------------
 # Quiz functionality (embedded to avoid import issues)
 # ---------------------------------------
@@ -74,10 +81,54 @@ def load_model():
             saved = pickle.load(f)
         return saved["model"], saved["vectorizer"], saved["data"]
     except FileNotFoundError:
-        st.warning("⚠️ Recommender model not found. Please train the model first.")
         return None, None, None
 
+def ensure_model_available():
+    """Ensure model artifacts exist; train on-the-fly if missing (useful on Streamlit Cloud)."""
+    global model, vectorizer, data
+    if model is not None and vectorizer is not None and data is not None:
+        return
+
+    # If missing, attempt to train automatically
+    if backend_train_model is not None:
+        with st.spinner("Training recommendation model (first-time setup)..."):
+            try:
+                result = backend_train_model()
+                if isinstance(result, dict) and result.get("status") == "success":
+                    # Clear cache and reload
+                    load_model.clear()
+                    m, v, d = load_model()
+                    if m is not None:
+                        model, vectorizer, data = m, v, d
+                        st.success("Model trained and loaded successfully.")
+                        return
+                else:
+                    st.error(f"Model training failed: {result}")
+            except Exception as ex:
+                st.error(f"Auto-training failed: {ex}")
+
+    # Fallback UI hint if training utility isn't available or failed
+    st.warning("⚠️ Recommender model not available. Use the button below to attempt training.")
+
 model, vectorizer, data = load_model()
+
+# Provide a manual control to train if needed
+with st.sidebar:
+    if st.button("⚙️ Train/Refresh Model"):
+        try:
+            if backend_train_model is None:
+                st.error("Training function not available.")
+            else:
+                with st.spinner("Training model..."):
+                    result = backend_train_model()
+                    if isinstance(result, dict) and result.get("status") == "success":
+                        load_model.clear()
+                        model, vectorizer, data = load_model()
+                        st.success("Model refreshed.")
+                    else:
+                        st.error(f"Training failed: {result}")
+        except Exception as ex:
+            st.error(f"Training error: {ex}")
 
 # ---------------------------------------
 # Recommendation function
